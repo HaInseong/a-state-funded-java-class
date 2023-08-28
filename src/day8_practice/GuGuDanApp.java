@@ -1,4 +1,4 @@
-package practice;
+package day8_practice;
 
 public class GuGuDanApp {
 	public static void main(String args[]) {

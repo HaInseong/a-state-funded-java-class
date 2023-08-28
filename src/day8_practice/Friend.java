@@ -1,4 +1,4 @@
-package practice;
+package day8_practice;
 
 class Friend extends Person {
 	private String phoneNum;

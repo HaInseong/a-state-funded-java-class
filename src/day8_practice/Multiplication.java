@@ -1,4 +1,4 @@
-package practice;
+package day8_practice;
 
 class Multiplication {
 	private int dan;

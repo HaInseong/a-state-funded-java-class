@@ -1,4 +1,4 @@
-package practice;
+package day8_practice;
 
 public class GuGuDanExpr extends Multiplication {
 	GuGuDanExpr() {}
