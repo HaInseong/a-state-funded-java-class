@@ -30,7 +30,7 @@ class Time2 {
 
 	public void setHour(int hour) {
 		if (hour < 0 || hour > 23)
-			return;
+			return; //멤버변수에 초기화 안하고 종료
 		this.hour = hour;
 	}
 

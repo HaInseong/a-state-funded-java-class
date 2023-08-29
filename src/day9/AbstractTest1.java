@@ -1,5 +1,6 @@
 package day9;
 
+//자바의정석 slide 70이랑 유사하게 구성함.
 class Circle1 {
 	String color;
 
