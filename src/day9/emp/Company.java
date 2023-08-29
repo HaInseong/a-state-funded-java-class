@@ -12,7 +12,7 @@ public class Company {
 		
 		//모든 직원에게 인센티브 100씩 지급 (직원에 따라 적용되는 인센티브 금액은 다르다)
 		for(Employee emp : employee) {
-			if(emp instanceof Secretary) {
+			if(emp instanceof Secretary) { //전달된 자손의 객체가 어떤 것인지 확인하고 싶을 때 instanceof를 사용한다.
 				((Secretary)emp).incentive(100);	
 			} else if(emp instanceof Sales) {
 				((Sales)emp).incentive(100);
@@ -29,14 +29,14 @@ public class Company {
 			System.out.println("name" + "\t\t" + "department" + "\t\t" + "salary" + "\t\t" + "tax" + "\t\t" + "extra pay"); //tax 출력
 			System.out.println("---------------------------------------------------------------------------------");
 			for (Employee employee : emp) {
-				if(employee instanceof Sales) {
+				if(employee instanceof Sales) { //만약 employee가 Sales 타입이라면 ture
 					System.out.println(employee.getName() + "\t\t" + employee.getDepartment() + "\t\t\t" + employee.getSalary() + "\t\t" + ((Sales)employee).tax() + "\t\t" + ((Sales)employee).getExtraPay());
 				} 
 				else {
 					System.out.println(employee.getName() + "\t\t" + employee.getDepartment() + "\t\t" + employee.getSalary() + "\t\t" + ((Secretary)employee).tax());
 				}
 			}
-		} else {
+		} else { //isTax에 대한 if문의 else
 			System.out.println("name" + "\t\t" + "department" + "\t\t" + "salary" + "\t\t" + "extra pay"); //tax 미출력
 			System.out.println("-----------------------------------------------------------------");
 			for (Employee employee : emp) {
