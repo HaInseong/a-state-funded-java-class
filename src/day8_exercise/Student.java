@@ -1,4 +1,4 @@
-package exercise;
+package day8_exercise;
 
 public class Student extends Human {
 	//멤버변수
@@ -8,10 +8,11 @@ public class Student extends Human {
 	//생성자
 	Student() {}
 	Student(String name, int age, int height, int weight, String number, String major) {
-		super.name = name;
-		super.age = age;
-		super.height = height;
-		super.weight = weight;
+		super(name, age, height, weight);
+//		super.name = name;
+//		super.age = age;
+//		super.height = height;
+//		super.weight = weight;
 		this.number = number;
 		this.major = major;
 	}
