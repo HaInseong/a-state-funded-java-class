@@ -8,11 +8,11 @@ interface Inter2 {
 	void expr2();
 }
 
-interface Inter3 extends Inter1, Inter2 {
+interface Inter3 extends Inter1, Inter2 { //상속 받은게 있어서 추상메서드가 3개라고 봐야한다.
 	void expr3();
 }
 
-class InterClass implements Inter3 {
+class InterClass implements Inter3 { //InterClass, Inter1, Inter2, Inter3, Object형의 자리에 사용 될 수 있다.
 	public void expr1() {
 		System.out.println("expr1() 메서드 오버라이딩");
 	}

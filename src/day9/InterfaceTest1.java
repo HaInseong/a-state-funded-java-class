@@ -24,7 +24,7 @@ abstract class Shape3 {
 }
 
 
-class Circle3 extends Shape3 implements Printable {
+class Circle3 extends Shape3 implements Printable { //4가지 형으로 사용할 수 있다. Circle3, Shape3, Printable, Object
 	int page;
 
 	void draw() {
@@ -69,7 +69,8 @@ public class InterfaceTest1 {
 
 	static void printOut(Printable prt) { //Printable을 추가상속(인터페이스 구현)하고 있는 객체만 매개변수로 받는다. Rectangle3는 매개변수로 올수없음.
 		prt.setPage(100);
-		((Shape3) prt).setColor("파란색");
+		((Circle3) prt).setColor("파란색"); 
+		((Shape3) prt).setColor("파란색"); //setCollor는 Printable 인터페이스에 존재하는 메서드가 아니므로 강제형변환 해줘야한다.
 		if (prt.isAvailable())
 			prt.print(Printable.PRINT_TYPE2);
 	}
