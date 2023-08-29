@@ -1,4 +1,4 @@
-package day2_practice;
+package day2.practice;
 
 public class OperOrLab {
     public static void main(String[] args) {

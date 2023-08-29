@@ -1,4 +1,4 @@
-package day2_practice;
+package day2.practice;
 
 public class ForLab1 {
     public static void main(String[] args) {

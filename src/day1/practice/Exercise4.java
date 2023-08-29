@@ -1,4 +1,4 @@
-package day1_practice;
+package day1.practice;
 
 public class Exercise4 {
 

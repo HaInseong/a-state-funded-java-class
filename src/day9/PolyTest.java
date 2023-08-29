@@ -15,8 +15,9 @@ public class PolyTest {
 		printObjInfo(10); //int 원시형
 	}
 	static void printObjInfo(Object o) { //main메서드에서 조금 더 간단하게 호출하기 위해서 static으로 만듬
-		if(o instanceof String) { //오른쪽에는 체크할 대상이 온다.
+		if(o instanceof String) { //어떤 객체가 전달되었는지 체크할 때 사용하는 연산자 instanceof
 			System.out.println("문자열 객체가 전달됨 : " + o.toString()+"-"+((String)o).length());
+			String s = (String)o;
 		} else {
 			System.out.println("전달된 객체의 클래스명(타입) : " + o.getClass().getName()); //클래스 이름 확인 메서드
 			

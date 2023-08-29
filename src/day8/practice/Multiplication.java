@@ -1,4 +1,4 @@
-package day8_practice;
+package day8.practice;
 
 class Multiplication {
 	//static은 public 설정이 일반적이다.

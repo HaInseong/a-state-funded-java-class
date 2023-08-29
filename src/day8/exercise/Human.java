@@ -1,4 +1,4 @@
-package day8_exercise;
+package day8.exercise;
 
 public class Human {
 	//멤버변수
