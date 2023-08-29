@@ -8,7 +8,7 @@ public class MobileTest {
 		Mobile otab = new Otab("Otab", 1000, "XYZ-20");
 		
 		//생성된 객체 정보 출력
-		MobileTest.printTile();
+		MobileTest.printTile(); //같은 클래스에 있는 메서드라서 클래스명을 붙이지 않아도 호출되지만 static 메서드는 항상 클래스명을 사용해서 접근하는게 좋은 습관이다.
 		System.out.println("-----------------------------------------");
 		MobileTest.printMobile(ltab);
 		MobileTest.printMobile(otab);
@@ -35,7 +35,7 @@ public class MobileTest {
 
 
 	}
-	public static void printMobile(Mobile mobile) {
+	public static void printMobile(Mobile mobile) { // 상속되었으므로 Ltab, Otab 모두 Mobile형을 대신할 수 있다.
 		System.out.println(mobile.getMobileName() + "\t\t" + mobile.getBatterySize() + "\t\t" + mobile.getOsType());
 	}
 	public static void printTile() {

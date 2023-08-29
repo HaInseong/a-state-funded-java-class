@@ -15,8 +15,8 @@ abstract class Mobile {
 	}
 	
 	//추상 메서드
-	public abstract void operate(int time);
-	public abstract void charge(int time);
+	public abstract void operate(int time); //관례적으로 접근제어자 다음에 활용제어자가 옵니다.
+	public abstract void charge(int time); //추상메서드는 꼭 바디 없이 세미콜론으로 마무리해야합니다.
 	
 	//Getter, Setter
 	public String getMobileName() {
