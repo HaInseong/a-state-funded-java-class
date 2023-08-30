@@ -24,8 +24,11 @@ public class PlaneTest {
 
 		System.out.println("\n" + "[200 주유]");
 		PlaneTest.printTile();
-		plane[0].refuel(200);
-		plane[1].refuel(200);
+//		plane[0].refuel(200);
+//		plane[1].refuel(200);
+		for(Plane p : plane) {
+			p.refuel(200); //자식이 오버라이딩 하지 않았으면 부모에 있는지 확인하여 호출한다.
+		}
 		PlaneTest.printPlaneInfo(plane);
 //		for (Plane transfer : plane) {
 //			System.out.println(transfer.getPlaneName() + "\t\t" + transfer.getFuelSize());
