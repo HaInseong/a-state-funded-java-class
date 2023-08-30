@@ -1,4 +1,4 @@
-package day10;
+package day11;
 public class ExceptionTest2 {
 	public static void main(String[] args){
 		System.out.println("수행시작");
