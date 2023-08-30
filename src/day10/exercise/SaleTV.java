@@ -11,6 +11,7 @@ public class SaleTV extends TV {
 		super.setModel(model);
 		super.setSize(size);
 		super.setChannel(channel);
+//		super(model, size, channel);
 	}
 
 	public void play() {
