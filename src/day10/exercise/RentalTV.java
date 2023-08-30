@@ -7,10 +7,11 @@ public class RentalTV extends TV implements Rentable {
 	}
 
 	public RentalTV(int price, String model, int size, int channel) {
+		super(model, size, channel); //super 생성자는 가장 먼저 와야한다.
 		this.price = price;
-		super.setModel(model);
-		super.setSize(size);
-		super.setChannel(channel);
+//		super.setModel(model);
+//		super.setSize(size);
+//		super.setChannel(channel);
 	}
 
 	public void play() {
