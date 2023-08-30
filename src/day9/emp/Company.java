@@ -11,15 +11,20 @@ public class Company {
 		printEmployee(employee, false);
 		
 		//모든 직원에게 인센티브 100씩 지급 (직원에 따라 적용되는 인센티브 금액은 다르다)
-		for(Employee emp : employee) {
-			if(emp instanceof Secretary) { //전달된 자손의 객체가 어떤 것인지 확인하고 싶을 때 instanceof를 사용한다.
-				((Secretary)emp).incentive(100); 
-				//인터페이스 클래스로부터 물려받은 메서드의 경우 선조형 타입으로 호출하면 한버넹 자손에서 구현된 메서드들을 동시에 모두 처리할 수 있다.
-				//ex. Bonus.incentive(100);
-			} else if(emp instanceof Sales) {
-				((Sales)emp).incentive(100);
-			} //else;
+//		for(Employee emp : employee) {
+//			if(emp instanceof Secretary) { //전달된 자손의 객체가 어떤 것인지 확인하고 싶을 때 instanceof를 사용한다.
+//				((Secretary)emp).incentive(100); 
+//				//인터페이스 클래스로부터 물려받은 메서드의 경우 선조형 타입으로 호출하면 한번에 자손에서 구현된 메서드들을 동시에 모두 처리할 수 있다.
+//				//ex. Bonus.incentive(100);
+//			} else if(emp instanceof Sales) {
+//				((Sales)emp).incentive(100);
+//			} //else;
+//		}
+		
+		for(Employee e : employee) {
+			((Bonus)e).incentive(100);
 		}
+		
 		
 		//printEmployee() 메서드를 호출하여 Employee 배열의 객체들 정보와 세금을 출력한다.
 		printEmployee(employee, true);
