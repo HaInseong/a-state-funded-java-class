@@ -1,4 +1,5 @@
 package day11;
+//은행 계좌 객체
 class Account {
 	private String account;
 	private double balance;
@@ -56,7 +57,7 @@ public class AccountTest {
 		System.out.println("계좌정보 : " + ac.getAccount() + "  " + ac.getBalance() + "  " + ac.getInterestRate());
 		System.out.println(ac);
 		try {
-			ac.deposit(-10);
+			ac.deposit(-10); //deposit에서 에러가 나더라도 withdraw를 수행하려면 try catch를 각각 만들어야한다.
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}		
