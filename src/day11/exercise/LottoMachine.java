@@ -13,13 +13,14 @@ public class LottoMachine {
 		//1-20 사이의 6개 숫자를 추출하여 nums 배열에 저장한다.(단, Random 클래스를 사용)
 		Random random = new Random();
 		for(int i=0; i<6; i++) {
-			int rNum;
-			rNum = random.nextInt(20) + 1; //1부터 20사이의 난수 생성
-			nums[i] = rNum;
+//			int rNum;
+//			rNum = random.nextInt(20) + 1; //1부터 20사이의 난수 생성
+//			nums[i] = rNum;
+			nums[i] = random.nextInt(20) + 1;
 		}
 	}
 	
-	public void checkLottoNums() throws DuplicateException {
+	public void checkLottoNums() throws DuplicateException { //메서드 헤더를 보고 DuplicateException가 발생할 수 있다는 것을 알 수 있다.
 		//6개의 모든 숫자들이 유니크한지 체크하고 중복숫자가 발견되면 DuplicationException을 발생시킨다(throw, throws)
 		 for (int i = 0; i < nums.length; i++) {
 	            for (int j = i + 1; j < nums.length; j++) {
