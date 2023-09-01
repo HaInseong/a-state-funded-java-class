@@ -32,6 +32,7 @@ public class LinkedListLab1 {
 
 	public static void main(String args[]) {
 		LinkedList<Friend> list = new LinkedList<>();
+		//LinkedList이니 Iterator 사용해야 함
 		
 		System.out.println("이름  전화번호  메일주소");
 		System.out.println("-------------------");
