@@ -12,16 +12,18 @@ public class CreateGenericTest {
 		String s2 = (String)v2.get();
 		System.out.println(s2);		
 		v2.put(new Date());
-		Date d1 = (Date)v2.get();
+//		v2.put("ABC"); Object는 다른 타입이 들어왔다는 것을 컴파일 단계에서 알려주지 못한다. 그러므로 추출할 때 ClassCastException이 발생한다.
+		Date d1 = (Date)v2.get(); //데이터 추출시 리턴값의 유형이 Object이기 때문에 형변환해서 추출해야한다. 
 		System.out.println(d1);		
 		
-		Value3<String> v3 = new Value3<>();
+		Value3<String> v3 = new Value3<>(); //Type paramer에 맞춰서 모든 T가 String으로 바뀐다.
 		v3.put("가나다");
 		String s3 = v3.get();
 		System.out.println(s3);	
 		
-		Value3<Date> v4 = new Value3<>();
+		Value3<Date> v4 = new Value3<>(); //Type paramer에 맞춰서 모든 T가 Date로 바뀐다.
 		v4.put(new Date());
+//		v4.put("ABC"); //제네릭 구문은 다른 타입이 들어왔다는 것을 컴파일 단계에서 알려준다는 장점이 있다.
 		Date d2 = v4.get();
 		System.out.println(d2);		
 	}
@@ -54,7 +56,7 @@ class Value3<T> { //<T> = Type parameter라 한다.
 	void put(T obj) {
 		this.obj = obj;		
 	}
-	T get() {
+	T get() { //제네릭은 강제 형변환이 필요없다. 
 		return obj;
 	}
 }

@@ -14,8 +14,8 @@ class ArrayListExample1 {
 			System.out.println(str);
 		}
 		ArrayList<Integer> list2 = new ArrayList<Integer>();
-		list2.add(Integer.valueOf(100));
+		list2.add(Integer.valueOf(100)); //예전에는 Auto boxing이 안됐음.
 		list2.add(1000);// JDK 1.5 부터 AUTO Boxing 이라는 구문이 지원
-		// list2.add("1000");
+//		list2.add("1000");
 	}
 }
