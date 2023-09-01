@@ -25,7 +25,7 @@ public class HashMapLab1 {
 				System.out.println("저장되었습니다.");
 				map.put(local, num); 
 			}
-		}
+		} 
 		System.out.println("5개가 모두 입력되었습니다.");
 		System.out.print("입력된 데이터: ");
 		

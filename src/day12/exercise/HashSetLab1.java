@@ -15,7 +15,7 @@ public class HashSetLab1 {
 		for (int i=0; i<10; i++) {
 			do {
 				num = random.nextInt(30) + 1;
-			} while(!set.add(num));
+			} while(!set.add(num)); //Iterator 사용해보기
 				System.out.print(num + " ");
 			
 		}
