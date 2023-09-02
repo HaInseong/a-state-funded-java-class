@@ -14,24 +14,26 @@ class Member3 {
 		this.password = password;
 	}
 
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o != null && o instanceof Member3) {
-			Member3 m = (Member3) o;
-			if (id == m.id && name.equals(m.name) && password.equals(m.password))
-				return true;
-		}
-		return false;
-	}
-
+//	@Override
+//	public boolean equals(Object o) {
+//		if (this == o)
+//			return true;
+//		if (o != null && o instanceof Member3) {
+//			Member3 m = (Member3) o;
+//			if (id == m.id && name.equals(m.name) && password.equals(m.password))
+//				return true;
+//		}
+//		return false;
+//	}
+	
+	@Override
 	public String toString() {
 		return "(" + id + ":" + name + ":" + password + ")";
 	}
-
-	public int hashCode() {
-		return Objects.hash(id, name, password);
-	}
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(id, name, password);
+//	}
 }
 
 public class ObjectTest3 {
