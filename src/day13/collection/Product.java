@@ -52,7 +52,9 @@ public class Product {
 	
 	@Override
 	public String toString() {
-		return "(" + productID + ":" + productName + ":" + productPrice + ")";
+//		return "(" + productID + ":" + productName + ":" + productPrice + ")";
+		return productID + "\t" + productName + "\t" + productPrice;
+		//return String.format("%-10s", productId); toString을 오버라이딩해서 이런식으로 Test에서 메서드 호출로 출력 가능.
 	}
 
 }
