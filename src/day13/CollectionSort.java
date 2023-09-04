@@ -3,7 +3,8 @@ package day13;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+//이 코드는 CollectionSort라기에는 무리가 있고, Collections 클래스를 배우기 위해 만들어졌다.
+//자바에는 Collection & Collections(Objects, Arrays)이라는 클래스 두 개가 있다.
 public class CollectionSort {
 	public static void main(String[] args) {
 		String[] array = { "JAVA", "SERVLET", "JDBC", "JSP", "RMI" };
@@ -22,7 +23,7 @@ public class CollectionSort {
 		Collections.sort(list);
 		System.out.println("list의 데이터들을 오름차순으로 소팅한 결과 : " + list);
 
-		Collections.shuffle(list);
+		Collections.shuffle(list); //순서 뒤섞음
 		System.out.println("list의 데이터들을 섞은 결과 : " + list);
 
 		List<Integer> list2 = new ArrayList<Integer>();
