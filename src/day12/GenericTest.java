@@ -5,6 +5,8 @@ import java.util.LinkedList;
 
 public class GenericTest {
 	public static void main(String[] args) {
+		// 제네릭스 라는 구문이 적용되어 만들어진 클래스의 객체 생성
+		//타입 파라미터라는 것을 사용한다.
 		LinkedList list = new LinkedList();
 		list.add("java");
 		list.add(100);
