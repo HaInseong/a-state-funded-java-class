@@ -6,9 +6,9 @@ import day7.Student2;
 
 public class SerialTest4 {
    public static void main(String[] args) throws Exception{ 
-      FileInputStream fis = 
-    		  new FileInputStream("c:/iotest/test2.ser"); 
-      ObjectInputStream ois = new ObjectInputStream(fis); 
+      FileInputStream fis = new FileInputStream("c:/iotest/test2.ser"); 
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      //읽어올 때 저장된 순서 반드시 지켜줘야한다.
       Date value1 = (Date)ois.readObject();
       Date value2 = (Date)ois.readObject();
       Student2 st = (Student2)ois.readObject();

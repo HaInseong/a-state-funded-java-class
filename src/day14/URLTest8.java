@@ -12,8 +12,7 @@ public class URLTest8 {
 
 	public static void main(String[] args) {
 		try {
-			URL req = new URL(
-					"http://openapi.seoul.go.kr:8088/796143536a756e69313134667752417a/json/LampScpgmtb/1/100/");
+			URL req = new URL("http://openapi.seoul.go.kr:8088/796143536a756e69313134667752417a/json/LampScpgmtb/1/100/");
 
 			InputStream is = req.openStream();
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));

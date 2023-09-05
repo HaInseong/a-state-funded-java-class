@@ -11,7 +11,7 @@ public class URLTest1 {
 	public static void main(String[] args) {
 		try {
 			URL req = new URL("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1171062000");
-			InputStream is = req.openStream();
+			InputStream is = req.openStream(); //openStream은 InputStream객체를 리턴해줌
 			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 			String lineStr = "";
 			while (true) {
@@ -20,7 +20,7 @@ public class URLTest1 {
 					break;
 				System.out.println(lineStr);
 			}
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException e) { //정해진 URL 문자열 기본 규약의 형식이 틀리면 발생하는 Exception
 			System.out.println("URL문자열 오류 : " + e.getMessage());
 		} catch (IOException e) {
 			System.out.println("IO 오류 : " + e.getMessage());
