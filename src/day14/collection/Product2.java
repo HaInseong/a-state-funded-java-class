@@ -1,14 +1,15 @@
-package day13.collection;
+package day14.collection;
 
 import java.util.Objects;
 
-public class Product {
+
+public class Product2 implements Comparable<Product2> {
 	private String productID;
 	private String productName;
-	private String productPrice;
+	private int productPrice; //int형으로 변환해서 푸세요.
 	
-	Product() {}
-	Product(String productId, String productName, String productPrice) {
+	Product2() {}
+	Product2(String productId, String productName, int productPrice) {
 		this.productID = productId;
 		this.productName = productName;
 		this.productPrice = productPrice;
@@ -26,10 +27,10 @@ public class Product {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getProductPrice() {
+	public int getProductPrice() {
 		return productPrice;
 	}
-	public void setProductPrice(String productPrice) {
+	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
 	}
 	
@@ -37,8 +38,8 @@ public class Product {
 	public boolean equals(Object o) {
 		if (this == o)
 			return true;
-		if (o != null && o instanceof Product) {
-			Product p = (Product) o;
+		if (o != null && o instanceof Product2) {
+			Product2 p = (Product2) o;
 			if (productID.equals(p.productID) )
 				return true;
 		}
@@ -50,12 +51,16 @@ public class Product {
 		return Objects.hash(productID);
 	}
 	
-
 	@Override
 	public String toString() {
-//		return "(" + productID + ":" + productName + ":" + productPrice + ")";
-		return productID + "\t" + productName + "\t" + productPrice;
-		//return String.format("%-10s", productId); toString을 오버라이딩해서 이런식으로 Test에서 메서드 호출로 출력 가능.
+		return String.format("%-5s %-10s %,d원", productID, productName, productPrice);
+	}
+	
+	@Override
+	public int compareTo(Product2 o) { //어떤 객체가 더 크고 작은지 체크할 필요가 있을 때 사용한다. 기준은 객체마다 다르다, 이름의 길이가 될수도..
+		if(productPrice<o.productPrice) return 1; 
+		else if(productPrice == o.productPrice) return 0;
+		else return -1; 
 	}
 
 }

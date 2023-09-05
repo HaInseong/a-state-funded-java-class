@@ -1,5 +1,6 @@
 package day13;
-//남이 만든 클래스라면? 남의 소스인 Person2를 손댈수 없다는 전제하에 CompareTo 메서드를 오버라이딩 할 수 없으므로 PersonComparator 사용한다.
+//남이 만든 클래스라면? = Comparable 인터페이스를 상속할 수 없는 경우
+//남의 소스인 Person2를 손댈수 없다는 전제하에 CompareTo 메서드를 오버라이딩 할 수 없으므로 PersonComparator 클래스를 만들어서 비교에 사용한다.
 //Comparable를 추가 상속하고 있다면 바로 sort를 사용하면 된다.
 import java.util.Comparator;
 import java.util.LinkedList;

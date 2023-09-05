@@ -12,8 +12,10 @@ public class FileReaderTest2 {
 		try {
 			reader = new FileReader("c:/iotest/output.txt");
 			br = new BufferedReader(reader);
+			//생성된 FileReader객체를 BufferedReader에 전달하게 하여 스트림을 연결하여 한 행단위로 읽어올 수 있는 메서드를 쓸 수 있게 만든다. 
 			while (true) {
-				String data = br.readLine();
+				String data = br.readLine(); //한 행단위로 읽어올 수 있는 메서드, 예전에는 많이 썼지만 지금은 Scanner에서 한 행단위 읽는 메서드 많이 쓴다.
+				//readLine는 더이상 읽을게 없을 때는 null을 리턴한다.
 				if (data == null)
 					break;
 				System.out.println(data);

@@ -2,7 +2,7 @@ package day13;
 
 import java.io.File;
 import java.util.Scanner;
-
+//폴더 = 디렉토리
 public class FileTest2 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -10,7 +10,7 @@ public class FileTest2 {
 		String fileName = scan.nextLine();
 		File fObj = new File(fileName);
 		if (fObj.isFile()) {
-			System.out.println(fileName + "명의 디렉토리가 존재합니다.");
+			System.out.println(fileName + "명의 파일이 존재합니다.");
 			System.out.println("절대패스 : " + fObj.getAbsolutePath());
 			System.out.println("파일명 : " + fObj.getName());
 			System.out.println("부모 폴더 : " + fObj.getParent());

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
+//append 모드
 public class FileWriterTest3 {
 	public static void main(String[] args) {
 		String path = "C:/iotest";
@@ -15,8 +16,10 @@ public class FileWriterTest3 {
 		if (!dir.exists()) {
 			dir.mkdirs();
 		}
-		try (FileWriter writer = new FileWriter("C:/iotest/today.txt", true);
-				PrintWriter out = new PrintWriter(writer);) {
+		try (FileWriter writer = new FileWriter("C:/iotest/today.txt", true); //AutoClosable 문법 적용
+			//우선 출력 스트림 객체를 생성하고, printWriter 객체의 매개변수로 보낸다.
+				PrintWriter out = new PrintWriter(writer);) { //close가 필요한 객체 2개 생성
+			//PrintWriter는 스트림 객체를 연결하여 사용할 수 있다. 갯수 제한 없음.
 			LocalDate ld = LocalDate.now();
 			int yearNum = ld.getYear();
 			int monthNum = ld.getMonthValue();

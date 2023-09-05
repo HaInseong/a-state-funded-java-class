@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-class Person implements Comparable<Person> { //인터페이스가 가지고 있는 추상메서드 다 오버라이딩해줘야한다.
+class Person implements Comparable<Person> { //인터페이스가 가지고 있는 추상메서드 다 오 버라이딩해줘야한다.
 	public String name;
 	public int age;
 
@@ -13,7 +13,8 @@ class Person implements Comparable<Person> { //인터페이스가 가지고 있�
 		this.name = name;
 		this.age = age;
 	}
-
+	
+	@Override
 	public int compareTo(Person o) { //어떤 객체가 더 크고 작은지 체크할 필요가 있을 때 사용한다. 기준은 객체마다 다르다, 이름의 길이가 될수도..
 		//오름차순에 기반한 compareTo 만드는 방법, 매개변수가 더 크면 양의값 리턴하면 내림차순이 된다.
 		if(age<o.age) return -1; //매개변수가 더 크면 음의값 리턴

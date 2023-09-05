@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class FileTest3 {
 	public static void main(String[] args) throws Exception {
-		File dir = new File(args[0]);
+		File dir = new File(args[0]); //이미 존재하는 폴더명을 줘야한다. 그렇지않으면 return되서 종료됨.
 		if (!dir.exists() || !dir.isDirectory()) {
 			System.out.println("유효하지 않은 디렉토리입니다.");
 			return;
