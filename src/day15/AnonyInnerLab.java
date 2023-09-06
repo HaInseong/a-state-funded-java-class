@@ -6,17 +6,17 @@ import java.util.Comparator;
 
 import day7.Book;
 
-class BookComparator implements Comparator<Book> {
-	@Override
-	public int compare(Book o1, Book o2) {
-		if (o1.price < o2.price)
-			return -1;
-		else if (o1.price > o2.price)
-			return 1;
-		else
-			return 0;
-	}
-}
+//class BookComparator implements Comparator<Book> {
+//	@Override
+//	public int compare(Book o1, Book o2) {
+//		if (o1.price < o2.price)
+//			return -1;
+//		else if (o1.price > o2.price)
+//			return 1;
+//		else
+//			return 0;
+//	}
+//}
 
 public class AnonyInnerLab {
 
@@ -33,9 +33,17 @@ public class AnonyInnerLab {
 		for (Book bookList : book) {
 			System.out.println(bookList);
 		}
-		
-		InnerTest n = new InnerTest();
-		n.pr(new BookComparator(), book);
+
+		Collections.sort(book, new Comparator<Book>() { //익명 클래스의 부모는 객체생성식인 Comparator이 된다.
+			public int compare(Book o1, Book o2) {
+				if (o1.price < o2.price)
+					return -1;
+				else if (o1.price > o2.price)
+					return 1;
+				else
+					return 0;
+			}
+		});
 
 		System.out.println();
 		System.out.println("[소팅 후]");
@@ -46,10 +54,4 @@ public class AnonyInnerLab {
 
 	}
 
-}
-
-class InnerTest {
-	void pr(Comparator<Book> o, ArrayList<Book> book) {
-		Collections.sort(book, o);
-	}
 }

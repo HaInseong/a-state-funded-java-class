@@ -3,9 +3,9 @@ package day7;
 
 //book 클래스 객체5개 생성 , 각각 변수 저장, 각각의 책정보를 행단위출력p
 public class Book {
-	public String title;
+	public String title; 
 	public String author;
-	public int price;
+	public int price; //디폴트 제어자이기 때문에 다른 패키지에서 사용 못하므로 getPrice() 만들어줌
 	
 	public Book() {
 		this("이것이 자바다", "신용권", 20000);
