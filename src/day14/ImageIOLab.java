@@ -14,7 +14,7 @@ public class ImageIOLab {
         String path = "C:/iotest/myimage";
         File isDir = new File(path);
         if (!isDir.exists()) {
-            isDir.mkdirs();
+            isDir.mkdirs(); //파일클래스의 메서드로 파일 생성
         }
 
         try {
@@ -28,7 +28,7 @@ public class ImageIOLab {
                     String imageUrl = parts[1].trim();
 
                     URL req = new URL(imageUrl);
-                    InputStream is = req.openStream();
+                    InputStream is = req.openStream(); //url로 지정한 객체 읽어와서 저장
                     
                     String fileName = "c:/iotest/myimage/" + imageName + ".jpg"; // 생성되는 이미지 파일명
                     

@@ -17,7 +17,7 @@ public class InnerTest4 {
 		System.out.println("Main start !!");
 		InnerTest4 n = new InnerTest4();
 		// 이 이름 없는 Inner 클래스는 Testable 와 Object 의 자손이 된다.
-		n.pr(new Testable() {
+		n.pr(new Testable() { //추상이나 인터페이스든 객체생성식에서는 new로 객체생성식 줘야한다.
 			int su = 100;
 
 			public void output(String s) {
