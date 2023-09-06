@@ -1,5 +1,5 @@
 package day15;
-
+//조인 메서드 사용한 예제
 public class ThreadEx09 {
 	public static void main(String[] args) throws Exception {
 		Thread mainThread = Thread.currentThread();
@@ -16,9 +16,9 @@ public class ThreadEx09 {
 		threadA.start();
 		threadB.start();
 		threadC.start();
-		threadA.join();
-		threadB.join();
-		threadC.join();
+		threadA.join(); //해당 스레드 객체의 기능이 끝날 때 까지 메인스레드는 일시정지 하는 기능
+		threadB.join(); //쓰레드 b라는 객체로 기동된 스레드가 끝날 때 까지 메인 스레드는 대기해라.
+		threadC.join(); //자식 스레드 수행이 끝날 때 까지 기다렸다가 메인 스레드를 실행할 때 사용하는 메서드임
 
 		for (int i = 0; i < 3; i++)
 			System.out.println("프로그램 시작 스레드 이름: " + mainThread.getName());

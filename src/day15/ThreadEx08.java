@@ -11,8 +11,10 @@ public class ThreadEx08 {
 		ThreadB threadB = new ThreadB("ThreadB");
 		System.out.println("작업 스레드 이름: " + threadB.getName());
 
-		ThreadC threadC = new ThreadC();
+		ThreadC threadC = new ThreadC(); //따로 이름을 지정하는 부분이 없으므로 JVM이 알아서 자동으로 이름을 부여해줌.
 		System.out.println("작업 스레드 이름: " + threadC.getName());
+
+		//스레드는 스레드 객체마다 satrt() 해야 함.
 		threadA.start();
 		threadB.start();
 		threadC.start();
@@ -21,7 +23,7 @@ public class ThreadEx08 {
 			System.out.println("프로그램 시작 스레드 이름: " + mainThread.getName());
 	}
 }
-
+//워커스레드1
 class ThreadA extends Thread {
 	public ThreadA() {
 		setName("ThreadA");
@@ -33,7 +35,7 @@ class ThreadA extends Thread {
 		}		
 	}
 }
-
+//워커스레드2
 class ThreadB extends Thread {
 	public ThreadB(String name) {
 		super(name);
@@ -45,7 +47,7 @@ class ThreadB extends Thread {
 		}		
 	}
 }
-
+//워커 스레드3 = 원래는 기능별로 워커 스레드 만들어야 함.
 class ThreadC extends Thread {
 	public void run() {
 		for (int i = 0; i < 2; i++) {

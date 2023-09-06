@@ -6,7 +6,8 @@ class ThreadEx06 {
 	public static void main(String[] args) throws Exception {
 		String input = JOptionPane.showInputDialog("아무 값이나 입력하세요. 입력할 때까지 일 안합니다..(^^)");
 		System.out.println("입력하신 값은 " + input + "입니다.");
-
+		
+		//for문을 워커 스레드로 만들어주면 컴퓨터를 혹사시킬 수 있다. = Ex07 예제로..
 		for (int i = 10; i > 0; i--) {
 			System.out.println(i);
 			try {

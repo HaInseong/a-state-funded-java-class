@@ -16,7 +16,7 @@ class ThreadEx05 {
 	}
 }
 
-class ThreadEx5_1 extends Thread {
+class ThreadEx5_1 extends Thread { //워커 스레드(추가 스레드) = 메인스레드와 동시에 번갈아가면서 출력된다.
 	public void run() {
 		for (int i = 0; i < 20; i++) {
 			try {
