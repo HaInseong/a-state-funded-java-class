@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ThreadEx17_sync1 {
 	public static void main(String[] args) throws Exception {
-		List<Character> buffer = Collections.synchronizedList(new ArrayList<>());
+		List<Character> buffer = Collections.synchronizedList(new ArrayList<>()); //ArrayList에 동기화 기능을 부여한 ArrayList객체로 바꿔서 생성.
 		Thread t1 = new ShareThread1(buffer);
 		Thread t2 = new ShareThread2(buffer);
 		t1.start();
