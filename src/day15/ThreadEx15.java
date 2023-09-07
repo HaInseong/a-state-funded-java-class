@@ -1,5 +1,5 @@
 package day15;
-
+//데몬 스레드 응용 예제 코드
 class ThreadEx15 {
 	public static void main(String args[]) {
 		GCThread gc = new GCThread();

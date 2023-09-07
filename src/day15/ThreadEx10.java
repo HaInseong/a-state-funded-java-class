@@ -10,7 +10,7 @@ public class ThreadEx10 {
 class StatePrintThread extends Thread {
 	private Thread targetThread;
 
-	public StatePrintThread(Thread targetThread) {
+	public StatePrintThread(Thread targetThread) { //생성자, targetThread를 감시하는 역할의 스레드 클래스 생성
 		this.targetThread = targetThread;
 	}
 
@@ -19,8 +19,10 @@ class StatePrintThread extends Thread {
 			Thread.State state = targetThread.getState();
 			System.out.println("타겟 스레드 상태: " + state);
 			if (state == Thread.State.NEW) {
-				System.out.println("START");
-				targetThread.start();
+				System.out.println("START"); //스레드 객체는 생성되어있다는 의미
+				targetThread.start(); //Runnable 상태로 들어감.
+				// sleep() == TIMED_WAITING
+				// join() == WAITING
 			}
 			if (state == Thread.State.TERMINATED) {
 				break;
@@ -40,7 +42,7 @@ class TargetThread extends Thread {
 		}
 
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(1500); //TIMED_WAITING 상태 진입
 		} catch (Exception e) {
 		}
 

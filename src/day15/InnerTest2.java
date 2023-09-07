@@ -1,12 +1,12 @@
 package day15;
-
+//네임드 이너 로컬 예제 코드
 class LocalTest {
 	String name = "Java";
 
 	void pr(final String s) {
 		final int su = 100;
 		System.out.println(s + " : " + su);
-		class Local {
+		class Local { //네임드 이너 로컬 클래스
 			void pr(String ls) {
 				System.out.println("s : " + s);
 				System.out.println("ls : " + ls);

@@ -14,10 +14,11 @@ class NewThread implements Runnable {
 	}
 }
 
-class THreadEx11 {
+class ThreadEx11 {
 	public static void main(String args[]) {
 		Thread t = new Thread(new NewThread(), "DEMO THREAD");
 		t.start();
+//		t.st
 		try {
 			for (int i = 5; i > 0; i--) {
 				System.out.println("Main Thread: " + i);

@@ -20,7 +20,8 @@ class FamilyThread extends Thread {
 }
 
 class Washroom {
-	public void openDoor(String name) throws InterruptedException {
+	public void openDoor(String name) throws InterruptedException { //동시에 호출되서는 안되는 메서드
+		//현재 access가 끝날 때까지 접근할 수 없게끔 동기화를 시켜줘야하는데 이는 메서드 헤더에 synchronized라는 제어자만 추가해주면 된다.
 		System.out.println(name + "님이 입장");
 		for (int i = 0; i < 50000; i++) {
 			if (i % 10000 == 0) {

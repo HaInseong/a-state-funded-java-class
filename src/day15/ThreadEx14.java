@@ -1,5 +1,5 @@
 package day15;
-
+//데몬 스레드 소개 예시 코드
 class ThreadEx14 implements Runnable {
 	static boolean autoSave = false;
 

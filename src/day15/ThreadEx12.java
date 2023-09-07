@@ -15,14 +15,14 @@ public class ThreadEx12 {
 }
 
 class PrintThread1 extends Thread {
-	private boolean stop;
+	private boolean stop; //false로 기본값 초기화
 
 	public void setStop(boolean stop) {
 		this.stop = stop;
 	}
 
 	public void run() {
-		while (!stop) {
+		while (!stop) { //stop이 false라면 무한 반복
 			System.out.println("실행 중");
 		}
 		System.out.println("자원 정리");
