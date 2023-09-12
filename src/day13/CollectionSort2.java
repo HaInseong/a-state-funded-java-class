@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-class Person implements Comparable<Person> { //인터페이스가 가지고 있는 추상메서드 다 오 버라이딩해줘야한다.
+class Person implements Comparable<Person> { //인터페이스가 가지고 있는 추상메서드는 모두 오버라이딩해줘야한다.
 	public String name;
 	public int age;
 
