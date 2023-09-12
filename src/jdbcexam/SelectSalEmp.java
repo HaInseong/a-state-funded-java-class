@@ -12,7 +12,9 @@ public class SelectSalEmp {
 		String passwd = "jdbctest";
 		Connection conn = DriverManager.getConnection(url,user,passwd);
 		Statement stmt = conn.createStatement();
+		// 여기까지 사골코드
 		ResultSet rs = stmt.executeQuery("SELECT ename, concat(format(sal, 1),'달러') fsal FROM emp ORDER BY sal DESC");
+		//자바에서는 "달러" 더블 인용부호를 쓰는 것을 지양해야한다.
 		System.out.printf("%-8s%-8s\n", "성명", "급여");
 		System.out.println("  --------------------------");
 		while (rs.next()) {

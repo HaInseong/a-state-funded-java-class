@@ -7,6 +7,8 @@ import java.sql.Statement;
 
 public class SelectEmp {
 	public static void main(String[] args) throws Exception {
+		
+		//String 타입들 상수로 만드는 것도 좋다.
 		String url = "jdbc:mysql://localhost:3306/edudb?characterEncoding=UTF-8&serverTimezone=UTC";
 		String user = "jdbctest";
 		String passwd = "jdbctest";
