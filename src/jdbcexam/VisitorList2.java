@@ -14,6 +14,7 @@ public class VisitorList2 {
 			String url = "jdbc:mysql://localhost:3306/edudb?characterEncoding=UTF-8&serverTimezone=UTC";
 			String user = "jdbctest";
 			String passwd = "jdbctest";
+			
 			conn = DriverManager.getConnection(url,user,passwd);
 			stmt = conn.createStatement();
 			String sql = "SELECT id, name, writedate, memo FROM visitor";

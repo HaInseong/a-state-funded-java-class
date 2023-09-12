@@ -13,17 +13,17 @@ public class SelectData2 {
 		String user = "jdbctest";
 		String passwd = "jdbctest";
 		try (Connection conn = DriverManager.getConnection(url, user, passwd);
-				Statement stmt = conn.createStatement();					
-				Scanner scan = new Scanner(System.in);){
-		    System.out.print("학생 이름을 입력하세요 : ");
-		    String name = scan.nextLine();
-		    ResultSet rs = stmt.executeQuery("select score from student where name = '"+name+"'");
-			if(rs.next()) 
+				Statement stmt = conn.createStatement();
+				Scanner scan = new Scanner(System.in);) {
+			System.out.print("학생 이름을 입력하세요 : ");
+			String name = scan.nextLine();
+			ResultSet rs = stmt.executeQuery("select score from student where name = '" + name + "'"); // statement는 sql문을 실행할 때 그때그때 전달해야한다.
+			if (rs.next())
 				System.out.println(name + "학생의 점수 : " + rs.getInt("score"));
-			 else 			
-				 System.out.println(name + "학생에 대한 데이터가 없습니다.");
-			 System.out.println("수행 종료...");
-			 rs.close();
+			else
+				System.out.println(name + "학생에 대한 데이터가 없습니다.");
+			System.out.println("수행 종료...");
+			rs.close();
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());
 		}

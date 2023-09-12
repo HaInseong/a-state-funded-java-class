@@ -13,18 +13,18 @@ public class SelectData3 {
 		String user = "jdbctest";
 		String passwd = "jdbctest";
 		try (Connection conn = DriverManager.getConnection(url, user, passwd);
-				PreparedStatement pstmt = conn.prepareStatement("select score from student where name = ?");
-				Scanner scan = new Scanner(System.in);){
-		    System.out.print("학생 이름을 입력하세요 : ");
-		    String name = scan.nextLine();
-		    pstmt.setString(1, name);
+				PreparedStatement pstmt = conn.prepareStatement("select score from student where name = ?"); //try catch with resource로 사용 가능, prepareStatement는 sql문을 미리 준비 가능.
+				Scanner scan = new Scanner(System.in);) {
+			System.out.print("학생 이름을 입력하세요 : ");
+			String name = scan.nextLine();
+			pstmt.setString(1, name);
 			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) 
+			if (rs.next())
 				System.out.println(name + "학생의 점수 : " + rs.getInt("score"));
-			 else 			
-				 System.out.println(name + "학생에 대한 데이터가 없습니다.");
-			 System.out.println("수행 종료...");
-			 rs.close();
+			else
+				System.out.println(name + "학생에 대한 데이터가 없습니다.");
+			System.out.println("수행 종료...");
+			rs.close();
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());
 		}

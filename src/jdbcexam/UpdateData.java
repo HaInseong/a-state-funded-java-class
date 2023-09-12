@@ -22,7 +22,7 @@ public class UpdateData {
 			pstmt.setInt(1,  score);
 		    pstmt.setString(2, name);
 			int updateNum = pstmt.executeUpdate();
-			if (updateNum > 0)
+			if (updateNum > 0) // 0보다 큰 값이 리턴되었다는 것은 하나의 행이 변경되었다는 의미.
 				System.out.println("student 테이블에서 " +updateNum + "행 변경 완료");
 			else 
 				System.out.println("변경 실패!!");

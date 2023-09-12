@@ -20,8 +20,8 @@ public class SelectData4 {
 		    int score = scan.nextInt();
 		    pstmt.setInt(1, score);
 			ResultSet rs = pstmt.executeQuery();			
-			if(rs.next()) {
-				ArrayList<String> students = new ArrayList<>();
+			if(rs.next()) { //한 행이라도 있다면 true
+				ArrayList<String> students = new ArrayList<>(); // 이 다음 단계는 DTO 클래스 이용해서 사용하는 것.
 				do {
 					students.add(rs.getString("name"));
 				} while (rs.next());

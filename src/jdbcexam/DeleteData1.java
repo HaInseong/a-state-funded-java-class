@@ -17,7 +17,7 @@ public class DeleteData1 {
 			System.out.print("학생 이름을 입력하세요 : ");
 		    String name = scan.nextLine();
 			pstmt.setString(1, name);
-			int delNum = pstmt.executeUpdate();
+			int delNum = pstmt.executeUpdate(); //입력된 학생값이 존재하지 않는다면 0이 리턴된다.
 			System.out.println("student 테이블에서 " + delNum + "행 삭제 완료");						
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());

@@ -13,6 +13,7 @@ public class VisitorList {
 		String sql = "SELECT id, name, writedate, memo FROM visitor";
 		ResultSet rs = stmt.executeQuery(sql);		
 		while(rs.next()) {
+			//왠만한 타입들은 getString으로 꺼내올 수 있다. 그러나 문자열 타입으로 바뀐다.
 			System.out.print(rs.getString("id")+"\t");
 			System.out.print(rs.getString("name")+"\t");
 			System.out.print(rs.getString("writedate")+"\t");

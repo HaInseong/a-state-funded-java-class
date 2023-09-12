@@ -26,7 +26,8 @@ public class InsertData1 {
 			stmt.executeUpdate("insert into student values ('짱아', 75)");
 			System.out.println("student 테이블에 데이터 삽입 완료");						
 		} catch (SQLException se1) {
-			System.out.println(se1.getMessage());
+			//System.out.println(se1.getMessage());
+			se1.printStackTrace();
 		} finally {
 			try {
 				stmt.close();

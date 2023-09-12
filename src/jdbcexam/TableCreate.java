@@ -16,6 +16,7 @@ public class TableCreate {
 			conn = DriverManager.getConnection(url, user, passwd);	
 			System.out.println("데이터베이스에 접속했습니다.");
 			stmt = conn.createStatement();		
+			
 			stmt.executeUpdate("create table student (name varchar(8) primary key, score int)");
 			System.out.println("student 테이블 생성");						
 		} catch (SQLException se1) {

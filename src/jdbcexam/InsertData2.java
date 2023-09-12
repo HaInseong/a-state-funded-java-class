@@ -12,7 +12,7 @@ public class InsertData2 {
 		String user = "jdbctest";
 		String passwd = "jdbctest";
 		try (Connection conn = DriverManager.getConnection(url, user, passwd);
-				PreparedStatement pstmt = conn.prepareStatement("insert into student values (?, ?)");
+				PreparedStatement pstmt = conn.prepareStatement("insert into student values (?, ?)"); // PreparedStatement API 등장
 				Scanner scan = new Scanner(System.in);){
 			while(true) {
 				System.out.print("학생 이름을 입력하세요 : ");

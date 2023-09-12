@@ -11,6 +11,7 @@ public class VisitorList3 {
 		String user = "jdbctest";
 		String passwd = "jdbctest";
 		String sql = "SELECT id, name, writedate, memo FROM visitor";
+		//따로 close하는 번거로움을 확 줄일 수 있다.
 		try (Connection conn = DriverManager.getConnection(url, user, passwd);
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql);) {
