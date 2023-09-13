@@ -1,7 +1,7 @@
 package jdbcexam.mvc;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+// ~Util클래스: 편리한 기능을 제공하는 역할
 public class MySQLConnUtil {
 	public static Connection connect() {
 		Connection conn = null;
