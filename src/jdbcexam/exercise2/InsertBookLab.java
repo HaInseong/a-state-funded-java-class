@@ -19,7 +19,7 @@ public class InsertBookLab {
 			int dataCount = 0;
 			while (true) {
 				System.out.print("도서명을 입력하세요 : ");
-				String title = scan.nextLine();
+				String title = scan.nextLine(); //반복문 안에서 변수선언 하지 마세요.
 				System.out.print("가격을 입력하세요 : ");
 				int price = Integer.parseInt(scan.nextLine());
 				System.out.println("도서 분류에 대한 넘버를 입력하세요.");

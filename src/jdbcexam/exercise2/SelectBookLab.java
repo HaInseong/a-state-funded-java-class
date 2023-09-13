@@ -28,7 +28,7 @@ public class SelectBookLab {
 				System.out.println("6. 도서명에 '자바'를 포함하는 도서들만 출력하기");
 				System.out.println("7. 분류별 도서 가격의 평균을 출력하기");
 				System.out.print("원하는 메뉴의 번호를 선택 : ");
-				String num = scan.nextLine();
+				String num = scan.nextLine(); //반복문 안에 변수 선언하지 말 것
 
 				if (num.equals("1")) { // 모든 행과 열 출력
 					ResultSet rs = stmt
@@ -36,71 +36,51 @@ public class SelectBookLab {
 					System.out.printf("%s%25s%30s%30s\n", "id", "제목", "가격", "종류");
 					System.out.println(
 							"---------------------------------------------------------------------------------------------");
-					while (rs.next()) {
-						System.out.printf("%-5d%25s%30s%30s\n", rs.getInt("id"), rs.getString("title"),
-								rs.getString("price"), rs.getString("kind"));
-					}
-					rs.close();
+					print1(rs);
 				}
 
-				if (num.equals("2")) { // 모든 행과 열 출력
+				else if (num.equals("2")) { // 모든 행과 열 출력
 					ResultSet rs = stmt.executeQuery(
 							"select id, title, concat(format(price, 0), '원') price, kind from book order by price desc");
 					System.out.printf("%s%25s%30s%30s\n", "id", "제목", "가격", "종류");
 					System.out.println(
 							"---------------------------------------------------------------------------------------------");
-					while (rs.next()) {
-						System.out.printf("%-5d%25s%30s%30s\n", rs.getInt("id"), rs.getString("title"),
-								rs.getString("price"), rs.getString("kind"));
-					}
-					rs.close();
+					print1(rs);
 				}
 
-				if (num.equals("3")) {
+				else if (num.equals("3")) {
 					ResultSet rs = stmt.executeQuery(
 							"select title, concat(format(price, 0), '원') price from book where price >= 20000");
 					System.out.printf("%20s%25s\n", "제목", "가격");
 					System.out.println("--------------------------------------------------------------");
-					while (rs.next()) {
-						System.out.printf("%25s%20s\n", rs.getString("title"), rs.getString("price"));
-					}
-					rs.close();
+					print2(rs);
 				}
 
-				if (num.equals("4")) {
+				else if (num.equals("4")) {
 					ResultSet rs = stmt.executeQuery(
 							"select title, concat(format(price, 0), '원') price from book where kind = 'b02'");
 					System.out.printf("%20s%25s\n", "제목", "가격");
 					System.out.println("--------------------------------------------------------------");
-					while (rs.next()) {
-						System.out.printf("%25s%20s\n", rs.getString("title"), rs.getString("price"));
-					}
-					rs.close();
+					print2(rs);
 				}
 
-				if (num.equals("5")) {
+				else if (num.equals("5")) {
 					ResultSet rs = stmt.executeQuery(
 							"select title, concat(format(price, 0), '원') price from book where kind in('b02', 'b05')");
 					System.out.printf("%20s%25s\n", "제목", "가격");
 					System.out.println("--------------------------------------------------------------");
-					while (rs.next()) {
-						System.out.printf("%25s%20s\n", rs.getString("title"), rs.getString("price"));
-					}
-					rs.close();
+					print2(rs);
 				}
 
-				if (num.equals("6")) {
+				else if (num.equals("6")) {
 					ResultSet rs = stmt.executeQuery(
 							"select title, concat(format(price, 0), '원') price from book where title like '%자바%'");
 					System.out.printf("%20s%25s\n", "제목", "가격");
 					System.out.println("--------------------------------------------------------------");
-					while (rs.next()) {
-						System.out.printf("%25s%20s\n", rs.getString("title"), rs.getString("price"));
-					}
-					rs.close();
+					print2(rs);
 				}
 
-				if (num.equals("7")) {
+				else if (num.equals("7")) {
 					ResultSet rs = stmt.executeQuery(
 							"select kind, concat(format(avg(price),0), '원') price from book group by kind");
 					System.out.println("--------------------------분류별 도서 가격의 평균--------------------------");
@@ -108,16 +88,16 @@ public class SelectBookLab {
 						if (rs.getString("kind").equals("b01")) {
 							System.out.println("프로그래밍 언어 도서들의 가격 평균은 " + rs.getString("price") + " 입니다.");
 						}
-						if (rs.getString("kind").equals("b02")) {
+						else if (rs.getString("kind").equals("b02")) {
 							System.out.println("웹 프로그래링 도서들의 가격 평균은 " + rs.getString("price") + " 입니다.");
 						}
-						if (rs.getString("kind").equals("b03")) {
+						else if (rs.getString("kind").equals("b03")) {
 							System.out.println("빅데이터 도서들의 가격 평균은 " + rs.getString("price") + " 입니다.");
 						}
-						if (rs.getString("kind").equals("b04")) {
+						else if (rs.getString("kind").equals("b04")) {
 							System.out.println("데이터베이스 도서들의 가격 평균은 " + rs.getString("price") + " 입니다.");
 						}
-						if (rs.getString("kind").equals("b05")) {
+						else if (rs.getString("kind").equals("b05")) {
 							System.out.println("인프라 도서들의 가격 평균은 " + rs.getString("price") + " 입니다.");
 						}
 					}
@@ -149,4 +129,26 @@ public class SelectBookLab {
 		}
 	}
 
+	public static void print1(ResultSet rs) throws SQLException {
+		while (rs.next()) {
+			System.out.printf("%-5d%25s%30s%30s\n", rs.getInt("id"), rs.getString("title"),
+					rs.getString("price"), rs.getString("kind"));
+		}
+		rs.close();
+	}
+	
+	public static void print2(ResultSet rs) throws SQLException {
+		while (rs.next()) {
+			System.out.printf("%25s%20s\n", rs.getString("title"), rs.getString("price"));
+		}
+		rs.close();
+	}
+	
+//	public static String bookFiled(ResultSet rs) throws SQLException {
+//		while (rs.next()) {
+//			
+//		}
+//		return 
+//	}
 }
+
