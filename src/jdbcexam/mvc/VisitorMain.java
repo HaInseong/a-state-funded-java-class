@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class VisitorMain {
 	public static void main(String[] args) {
-		VisitorDAO crud = new VisitorDAO();
+		VisitorDAO crud = new VisitorDAO(); //데이터베이스 연동은 VisitorDAO객체를 선언하여 DAO가 제공하는 기능을 사용한다.
 		Scanner scan = new Scanner(System.in);
 		loop: while (true) {
 			System.out.println("[ DB 연동 메뉴 선택 ]");

@@ -14,7 +14,7 @@ public class VisitorDAO {
 		boolean result = false;
 		Connection conn = MySQLConnUtil.connect();
 		try (PreparedStatement pstmt = conn
-				.prepareStatement("insert into visitor (name, writedate, memo) values (?, now(), ?)")) {
+				.prepareStatement("insert into visitor (name, writedate, memo) values (?, now(), ?)")) { //작성날짜는 now로 대신함
 			while (true) {
 				System.out.print("작성자 이름을 입력하세요 : ");
 				String name = scan.nextLine();
@@ -46,19 +46,19 @@ public class VisitorDAO {
 			ResultSet rs = stmt.executeQuery(
 					"select id, name, date_format(writedate, '%Y년 %m월 %d일') writedate, memo from visitor order by writedate desc");
 			vlist = new ArrayList<VisitorDTO>();
-			while (rs.next()) {
+			while (rs.next()) { //읽어온 ResultSet 객체를 한행씩 읽으면서 DTO에 저장한다.
 				VisitorDTO vo = new VisitorDTO();
 				vo.setId(rs.getInt("id"));
 				vo.setName(rs.getString("name"));
 				vo.setWriteDate(rs.getString("writedate"));
 				vo.setMemo(rs.getString("memo"));
-				vlist.add(vo);
+				vlist.add(vo); //선언한 VisitorDTO 리스트에 DTO객체를 저장한다.
 			}
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());
 		}
 		MySQLConnUtil.close(conn);
-		return vlist;
+		return vlist; //VisitorDTO 리스트를 호출한 곳에 전달하여 읽을 수 있게 해준다.
 	}
 	public boolean u(Scanner scan, int id) {
 		boolean result = false;
