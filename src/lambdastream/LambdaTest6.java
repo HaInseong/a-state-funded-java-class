@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 @FunctionalInterface
 interface MyFunctionalInterface2 {

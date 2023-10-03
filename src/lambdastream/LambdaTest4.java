@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 //@FunctionalInterface 
 interface Test {
@@ -6,7 +6,7 @@ interface Test {
 
 	void print();
 }
-
+//추상 메서드가 2개라 람다식은 불가능하지만 어나니머스 이너 클래스로 구현은 가능하다.
 public class LambdaTest4 {
 	public static void main(String[] args) {
 		Test test = new Test() {

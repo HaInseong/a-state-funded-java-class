@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 interface ActionExpression {
 	void exec(Object... param);

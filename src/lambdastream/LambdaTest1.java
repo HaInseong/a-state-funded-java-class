@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 interface Sample {
 	int calc(int n);
@@ -19,7 +19,8 @@ public class LambdaTest1 {
 		}
 		Sample obj = new SampleImpl();
 		MyTest.pr(obj);
-
+		
+		//어나니머스 이너 클래스 사용 = 클래스 정의한 위치에서 객체 생성이 한번만 가능
 		MyTest.pr(new Sample() {
 			public int calc(int n) {
 				return n + 10;

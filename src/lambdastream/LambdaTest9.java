@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 @FunctionalInterface
 interface MyFunctionalInterface5 {
@@ -19,7 +19,7 @@ public class LambdaTest9 {
 
 		fi = size -> new int[size];
 		System.out.println(fi.method5(8).length);
-
+		
 		fi =  int[]::new;
 		System.out.println(fi.method5(20).length);		
 	}

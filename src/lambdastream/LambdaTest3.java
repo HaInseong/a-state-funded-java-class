@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 @FunctionalInterface // 함수형 인터페이스 체크 어노테이션
 interface MyNumber {

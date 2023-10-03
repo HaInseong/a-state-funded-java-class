@@ -1,5 +1,5 @@
-package lambdaStream;
-
+package lambdastream;
+//괜히 만든 예제, 복잡쓰
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;

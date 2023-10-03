@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 @FunctionalInterface
 interface MyFunctionalInterface3 {
@@ -20,6 +20,8 @@ public class LambdaTest7 {
 
 		fi = (x, y) -> x + y;
 		System.out.println(fi.method3(3, 1));
+		
+		
 
 		fi = (x, y) -> Math.addExact(x, y);
 		System.out.println(fi.method3(4, 1));

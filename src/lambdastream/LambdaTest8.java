@@ -1,4 +1,4 @@
-package lambdaStream;
+package lambdastream;
 
 import java.util.Date;
 
