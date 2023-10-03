@@ -49,13 +49,14 @@ public class StudentDAO {
 		Connection conn = MySQLConnUtil.connect();
 		List<StudentDTO> slist = null;
 		try (Statement stmt = conn.createStatement()) {
-			ResultSet rs = stmt.executeQuery("select name from student");
+			ResultSet rs = stmt.executeQuery("select name, score from student");
 			slist = new ArrayList<StudentDTO>();
-			StudentDTO vo;
+			StudentDTO dto;
 			while (rs.next()) {
-				vo = new StudentDTO();
-				vo.setName(rs.getString("name"));
-				slist.add(vo);
+				dto = new StudentDTO();
+				dto.setName(rs.getString("name"));
+				dto.setScore(rs.getInt("score"));
+				slist.add(dto);
 			}
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());
@@ -71,7 +72,6 @@ public class StudentDAO {
 			ResultSet rs = stmt.executeQuery("select score from student where name = '" + dto.getName() + "'");
 			if(rs.next()) {
 				result = rs.getInt("score");
-				System.out.println(result);
 			}
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());

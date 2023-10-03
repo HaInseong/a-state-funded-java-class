@@ -8,6 +8,7 @@ public class StudentMain {
 //		StudentDAO crud = new StudentDAO();
 		Scanner scan = new Scanner(System.in);
 		StudentController crud = new StudentController();
+		StudentDTO dto = new StudentDTO();
 
 		loop: while (true) {
 			System.out.println("[ 처리하려는 기능을 선택하세요. ]");
@@ -17,19 +18,29 @@ public class StudentMain {
 			System.out.println("4. 학생 정보 수정"); // U
 			System.out.println("5. 학생 점수 확인"); // R
 			System.out.println("6. 종료");
+			System.out.print("입력: ");
+			
 			String aws = "";
 			aws = scan.nextLine();
-
 
 			switch (aws) {
 			case "1":
 				crud.printAll();
+				break;
+			case "2":
+				break;
+			case "3":
+				break;
+			case "4":
 				break;
 			case "5":
 				System.out.print("조회할 학생 이름을 입력해주세요 : ");
 				String name = scan.nextLine();
 				crud.printScore(name);
 
+				break;
+			case "6":
+				break;
 			}
 		}
 	}

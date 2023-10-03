@@ -6,7 +6,7 @@ import java.util.List;
 public class StudentController {
 	StudentDAO crud = new StudentDAO();
 	List<StudentDTO> slist = new ArrayList<>();
-	StudentDTO dto = new StudentDTO();
+	
 	
 	
 	public void printAll() {
@@ -15,8 +15,10 @@ public class StudentController {
 	}
 	
 	public void printScore(String name) {
+		StudentDTO dto = new StudentDTO();
 		dto.setName(name);
 		int score = crud.getScore(dto);
+		dto.setScore(score);
 		if(score < 0) {
 			System.out.println(name + " 학생은 존재하지 않습니다.");
 		} else {
